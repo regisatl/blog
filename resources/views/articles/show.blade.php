@@ -33,7 +33,7 @@
             <a class="nav-link" href="/contact-us">Contact</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/articles/ {{ $article->id }} ">Articles</a>
+            <a class="nav-link" href="/articles">Articles</a>
         </li>
     </ul>
 
@@ -42,7 +42,7 @@
         <h2 class="text-center text-dark mb-5 fw-semibold">Nos Commentaires !</h2>
 
         <div class="row">
-                @foreach ($article -> comments as $comment)
+                @foreach ($article ->comments as $comment)
                     <div class="col-sm-4">
                        <p>
                             <strong> {{ $comment->user->name }} </strong>

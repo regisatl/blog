@@ -5,5 +5,5 @@
         recusandae nobis perspiciatis officiis delectus ipsa nam voluptatibus, eius et molestias fuga facere earum saepe
         vel.
     </p>
-    <a class="btn btn-primary py-3" href="/articles/ {{ $article->id }} ">Articles</a>
+    <a class="btn btn-primary py-3 mb-3 mx-3" href="/articles/{{ $article->id }} ">Comments</a>
 </div>
