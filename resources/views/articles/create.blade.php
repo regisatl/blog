@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Comments</title>
+    <title>Create</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -36,41 +36,20 @@
             <a class="nav-link" href="/articles">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/create">Create</a>
+            <a class="nav-link active" href="/articles/create">Create</a>
         </li>
     </ul>
 
     <div class="mt-3">
 
-        <h2 class="text-center text-dark mb-5 fw-semibold">Comments !</h2>
-
-        <div class="text-dark">
-            @foreach ($article->comments as $comment)
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <p>
-                            <strong> {{ $comment->user->name }} </strong>
-                            a réagi :
-                        </p>
-                    </div>
-                    <div class="card-text p-3">
-                        <p>
-                            {{ $comment->comment }}
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <p>
-                            <small><em> {{ $comment->created_at->diffForHumans() }} </em></small>
-                        </p>
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
+        <h2 class="text-center text-dark mb-5 fw-semibold">Create article</h2>
+        <form action="/articles/create" method="post" enctype="multipart/form-data">
+            @csrf
+            @include('profile.partials.article-form')
+            <button type="submit" class="btn btn-success py-3 w-100 bg-gradient">Create</button>
+        </form>
 
     </div>
-
-</body>
 </body>
 
 </html>

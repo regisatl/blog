@@ -22,12 +22,18 @@
 
 <body class="container mt-3">
 
-    <ul class="nav nav-tabs mt-3 mb-5">
+    <ul class="nav nav-tabs nav-justified mt-3 mb-5 fw-bold">
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/about-us">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/articles">Articles</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/articles/create">Create</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/contact-us">Contact</a>
@@ -36,7 +42,7 @@
 
     <div class="mt-3">
 
-        <h2 class="text-center text-dark mb-5 fw-semibold">Nos articles !</h2>
+        <h2 class="text-center text-dark mb-5 fw-semibold">The articles !</h2>
 
         <div class="row">
             @if ($articles)

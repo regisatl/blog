@@ -11,6 +11,12 @@ class Article extends Model
     // Ajout
     protected $fillable = ['title', 'body', 'user_id', 'image'];
 
+    protected $appends = [ 'author', 'comments' ];
+
+    public function getCommentsAttribute()
+    {
+        return $this->comments()->with('user')->get();
+    }
 
     // Un article n'a qu'un auteur 
     public function user()
@@ -21,7 +27,7 @@ class Article extends Model
     // Un article peut avoir plusiseurs commentaires
     public function comments()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Comment::class);
     }
 
 

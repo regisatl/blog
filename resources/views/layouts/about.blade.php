@@ -22,7 +22,7 @@
 
 <body class="container mt-3">
 
-    <ul class="nav nav-tabs mt-3">
+    <ul class="nav nav-tabs nav-justified mt-3 fw-bold">
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
@@ -30,27 +30,24 @@
             <a class="nav-link active" href="/about-us">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/contact-us">Contact</a>
+            <a class="nav-link " href="/articles">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/articles">Articles</a>
+            <a class="nav-link " href="/articles/create">Create</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact-us">Contact</a>
         </li>
     </ul>
 
     <div class="mt-5">
-        <h2 class="text-center text-dark mb-5">A propos de nous !</h2>
-        <div class="d-flex justify-content-between">
-            <div class="card col-sm-4 px-1 mx-1 text-center">
-                <h3 class="card-header mb-3">A propos 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            </div>
-            <div class="card col-sm-4 px-1 mx-1 text-center">
-                <h3 class="card-header mb-3">A propos 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            </div>
-            <div class="card col-sm-4 px-1 mx-1 text-center">
-                <h3 class="card-header mb-3">A propos 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <h2 class="text-center text-dark mb-5">About us !</h2>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">Some example text. Some example text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste vitae ea, assumenda beatae nobis obcaecati aut voluptate expedita ducimus, cumque voluptas, incidunt excepturi! Doloremque eius dolore placeat, eveniet recusandae repellat?</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
             </div>
         </div>
     </div>

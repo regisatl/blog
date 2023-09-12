@@ -23,7 +23,7 @@
 <body>
     <div class="container mt-3">
 
-      <ul class="nav nav-tabs mt-3 mb-5">
+      <ul class="nav nav-tabs nav-justified mt-3 mb-5 fw-bold">
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
@@ -31,14 +31,17 @@
                 <a class="nav-link" href="/about-us">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/contact-us">Contact</a>
+                <a class="nav-link" href="/articles">Articles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/articles">Articles</a>
+                <a class="nav-link" href="/articles/create">Create</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact-us">Contact</a>
+                </li>
             </li>
         </ul>
 
-        <h2 class="text-center text-dark">Contactez nous !</h2>
+        <h2 class="text-center text-dark">Contact us !</h2>
 
         <div class="container">
 
@@ -66,7 +69,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <textarea id="subject" class="form-control" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                    <textarea id="subject" class="form-control" name="subject" placeholder="Write something.."></textarea>
                     <label for="subject">Subject</label>
                 </div>
 

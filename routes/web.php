@@ -32,8 +32,12 @@ Route::get('/about-us', [PagesController::class, 'about']);
 
 Route::get('/contact-us', [PagesController::class, 'contact']);
 
-Route::get('articles/', [ArticlesController::class, 'articles']);
+Route::get('/articles', [ArticlesController::class, 'articles']);
 
-Route::get('articles/{articles}', [ArticlesController::class, 'show']);
+Route::get('/articles/create', [ArticlesController::class, 'create']);
 
-require __DIR__.'/auth.php';
+Route::post('/articles/create', [ArticlesController::class, 'store']);
+
+Route::get('/articles/{articles}', [ArticlesController::class, 'show']);
+
+require __DIR__ . '/auth.php';

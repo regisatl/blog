@@ -22,7 +22,7 @@
 
 <body class="container mt-3">
 
-    <ul class="nav nav-tabs mt-3">
+    <ul class="nav nav-tabs nav-justified mt-3 fw-bold">
         <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
         </li>
@@ -30,15 +30,18 @@
             <a class="nav-link" href="/about-us">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/contact-us">Contact</a>
+            <a class="nav-link" href="/articles">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/articles">Articles</a>
+            <a class="nav-link" href="/articles/create">Create</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact-us">Contact</a>
         </li>
     </ul>
 
     <div class="mt-5">
-        <h1 class="font-semibold text-dark text-center">Laravel 101</h1>
+        <h1 class="font-semibold text-dark text-center">Laravel 10</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit rem accusantium ab placeat earum
             quasi,
             nam ipsam dolor eligendi explicabo, unde neque ex, fuga pariatur. Est, labore quidem optio earum iure
