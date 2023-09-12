@@ -7,7 +7,7 @@
     <label for="description">Entez the description</label>
 </div>
 <div class="input-group mb-3">
-    <input type="file" class="form-control form-control-lg" id="image">
+    <input type="file" class="form-control form-control-lg" id="image" name="image">
     <label class="input-group-text" for="image">Upload</label>
 </div>
 
