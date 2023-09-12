@@ -30,13 +30,13 @@
             <a class="nav-link" href="/about-us">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/contact-us">Contact</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="/articles">Articles</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="/articles/create">Create</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact-us">Contact</a>
         </li>
     </ul>
 
@@ -46,7 +46,7 @@
         <form action="/articles/create" method="post" enctype="multipart/form-data">
             @csrf
             @include('profile.partials.article-form')
-            <button type="submit" class="btn btn-success py-3 w-100 bg-gradient">Create</button>
+            <button type="submit" class="btn btn-success shadow-lg py-3 w-100 bg-gradient">Create</button>
         </form>
 
     </div>

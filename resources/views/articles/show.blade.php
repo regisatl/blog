@@ -30,13 +30,13 @@
             <a class="nav-link" href="/about-us">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/contact-us">Contact</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="/articles">Articles</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/create">Create</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact-us">Contact</a>
         </li>
     </ul>
 
@@ -46,16 +46,19 @@
 
         <div class="text-dark">
             @foreach ($article->comments as $comment)
-                <div class="card mb-3">
+                <div class="card shadow mb-3">
                     <div class="card-header">
                         <p>
                             <strong> {{ $comment->user->name }} </strong>
                             a réagi :
                         </p>
                     </div>
-                    <div class="card-text p-3">
+                    <div class="card-text px-3 pt-3">
                         <p>
                             {{ $comment->comment }}
+                        </p>
+                        <p>
+                            <a href="/articles/{{ $article->id }}/edit" class="btn btn-light py-2 shadow-lg bg-gradient">Edit article</a>
                         </p>
                     </div>
                     <div class="card-footer">
@@ -65,7 +68,6 @@
                     </div>
                 </div>
             @endforeach
-
         </div>
 
     </div>

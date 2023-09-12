@@ -38,6 +38,8 @@ Route::get('/articles/create', [ArticlesController::class, 'create']);
 
 Route::post('/articles/create', [ArticlesController::class, 'store']);
 
+Route::get('/articles/{articles}/edit', [ArticlesController::class, 'edit']);
+
 Route::get('/articles/{articles}', [ArticlesController::class, 'show']);
 
 require __DIR__ . '/auth.php';
