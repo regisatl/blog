@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index', 'show');
+    }
+
     //
     public function articles(Article $article)
     {
@@ -38,7 +44,9 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
 
-        return $art = Article::create($request->all());
+        Article::create($request->all());
+        return redirect('/aritcles')->with(['success_message' => 'L\'article a été crée avec succès ! ']);
+
 
     }
 
@@ -53,7 +61,6 @@ class ArticlesController extends Controller
         // validation
         $article->update($request->all());
 
-        dd($article, $request->all());
     }
 
     public function delete(Article $article)
