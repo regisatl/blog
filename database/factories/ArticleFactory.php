@@ -27,14 +27,14 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(15),
-            // on veut 15 mots
-            'body' => $this->faker->paragraph(50),
+            // on veut 5 mots
+            'title' => $this->faker->sentence(5),
             // on veut 200 phrases au maximum
+            'body' => $this->faker->paragraph(10),
             'user_id' => function () {
                 return User::inRandomOrder()->first()->id;
             },
-            'image' => $this->faker->image('public/images'),
+            'image' => $this->faker->image('public/assets/images'),
         ];
     }
 }

@@ -38,7 +38,7 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
 
-        $art = Article::create($request->all());
+        return $art = Article::create($request->all());
 
     }
 
@@ -46,5 +46,25 @@ class ArticlesController extends Controller
     {
         return view('articles.edit', compact('article'));
     }
+
+    public function update(Request $request, Article $article)
+    {
+        // vérification des permissions plus tard
+        // validation
+        $article->update($request->all());
+
+        dd($article, $request->all());
+    }
+
+    public function delete(Article $article)
+    {
+        // Vérification des permissions plus tard
+        $article->delete();
+
+    }
+
+
+
+
 
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title')</title>
+    <title>Edit</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -33,7 +33,7 @@
             <a class="nav-link" href="/articles">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="/articles/create">Create</a>
+            <a class="nav-link" href="/articles/create">Create</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/contact-us">Contact</a>
@@ -42,25 +42,22 @@
 
     <div class="mt-3">
 
-        <h2 class="text-center text-dark mb-5 fw-semibold">Edit article</h2>
+        <h2 class="text-center text-dark mb-3 fw-semibold">Edit article</h2>
 
-        <form action="/articles/{{ $article->id }}/edit" method="post" enctype="multipart/form-data">
-            <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="title" placeholder="Enter the title" name="title"
-                    value="{{ old('title', isset($article->title) ? $article->title : null) }}">
-                <label for="title">Entez the title</label>
-            </div>
-            <div class="form-floating mb-3">
-                <textarea class="form-control" id="description" placeholder="Enter the description" name="body"> {{ old('body', isset($article->body) ? $article->body : null) }} </textarea>
-                <label for="description">Entez the description</label>
-            </div>
-            <div class="input-group mb-3">
-                <input type="file" class="form-control form-control-lg" id="image" name="image">
-                <label class="input-group-text" for="image">Upload</label>
-            </div>
-            <button type="submit" class="btn btn-warning bg-gradient py-3 w-100 fw-bold">Save changed</button>
+        <form action="/article/{{ $article->id }}/edit" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('patch')
+            @include('profile.partials.edit-form')
         </form>
+
+        <form action="/article/{{ $article->id }}/delete" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger py-3 shadow-lg bg-gradient w-100">Delete article</button>
+        </form>
+
     </div>
+
 </body>
 
 </html>

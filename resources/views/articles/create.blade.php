@@ -46,7 +46,6 @@
         <form action="/articles/create" method="post" enctype="multipart/form-data">
             @csrf
             @include('profile.partials.article-form')
-            <button type="submit" class="btn btn-success shadow-lg py-3 w-100 bg-gradient">Create</button>
         </form>
 
     </div>

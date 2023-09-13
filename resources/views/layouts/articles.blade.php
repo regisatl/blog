@@ -47,7 +47,7 @@
         <div class="row">
             @if ($articles)
                 @foreach ($articles as $article)
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         @include('articles.index')
                     </div>
                 @endforeach

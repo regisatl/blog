@@ -38,8 +38,13 @@ Route::get('/articles/create', [ArticlesController::class, 'create']);
 
 Route::post('/articles/create', [ArticlesController::class, 'store']);
 
-Route::get('/articles/{articles}/edit', [ArticlesController::class, 'edit']);
+Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit']);
+
+Route::patch('/articles/{article}/edit', [ArticlesController::class, 'update']);
+
+Route::delete('articles/{article}/delete', [ArticlesController::class, 'delete']);
 
 Route::get('/articles/{articles}', [ArticlesController::class, 'show']);
+
 
 require __DIR__ . '/auth.php';
