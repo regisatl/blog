@@ -34,7 +34,7 @@
 
         <h2 class="text-center text-dark mb-3 fw-semibold">Edit article</h2>
 
-        <form action="/article/{{ $article->id }}/edit" method="post" enctype="multipart/form-data">
+        <form action="{{ route('edit') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             @include('profile.partials.edit-form')

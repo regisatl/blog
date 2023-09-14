@@ -18,16 +18,6 @@ use App\Http\Controllers\ArticlesController;
 |
 */
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
 Route::get('/', [PagesController::class, 'index'])->name('home');
 
 
@@ -37,15 +27,15 @@ Route::get('/contact-us', [PagesController::class, 'contact'])->name('contact')-
 //  Route for the article create, update, delete
 Route::get('/articles', [ArticlesController::class, 'articles'])->name('articles');
 
-Route::get('/articles/create', [ArticlesController::class, 'create'])->middleware('admin');
+Route::get('/articles/create', [ArticlesController::class, 'create'])->name('create')->middleware('admin');
 
-Route::post('/articles/create', [ArticlesController::class, 'store'])->middleware('admin');
+Route::post('/articles/create', [ArticlesController::class, 'store'])->name('create')->middleware('admin');
 
-Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit'])->middleware('auth');
+Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit'])->name('edit')->middleware('auth');
 
-Route::patch('/articles/{article}/edit', [ArticlesController::class, 'update'])->middleware('auth');
+Route::patch('/articles/{article}/edit', [ArticlesController::class, 'update'])->name('edit')->middleware('auth');
 
-Route::delete('article/{article}/delete', [ArticlesController::class, 'delete'])->middleware('auth');
+Route::delete('article/{article}/delete', [ArticlesController::class, 'delete'])->name('delete')->middleware('auth');
 
 // Route for Auth, Register, Login
 
@@ -53,7 +43,7 @@ Route::delete('article/{article}/delete', [ArticlesController::class, 'delete'])
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/create', [RegisterController::class, 'create'])->middleware('guest');
 
-//  Route for Login
+//  Route for Login 
 Route::get('/login', [SessionsController::class, 'index'])->middleware('guest');
 Route::post('/sign', [SessionsController::class, 'authentificate'])->middleware('guest');
 
@@ -61,7 +51,7 @@ Route::get('/logout', [SessionsController::class, 'logout'])->name('logout')->mi
 
 Route::get('/profile', [UserController::class, 'index'])->name('profile')->middleware('auth');
 
-Route::get('/articles/{articles}', [ArticlesController::class, 'show'])->middleware('auth');
+Route::get('/articles/{articles}', [ArticlesController::class, 'show'])->name('article')->middleware('auth');
 
 
 require __DIR__ . '/auth.php';

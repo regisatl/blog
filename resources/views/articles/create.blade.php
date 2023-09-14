@@ -33,7 +33,7 @@
     <div class="mt-5">
 
         <h2 class="text-center text-dark mb-5 fw-semibold">Create article</h2>
-        <form action="/articles/create" method="post" enctype="multipart/form-data">
+        <form action="{{ route('create') }}" method="post" enctype="multipart/form-data">
             @csrf
             @include('profile.partials.article-form')
         </form>

@@ -4,7 +4,7 @@
         <p class="card-text mt-1">{{ $article->title }}</p>
         <div class="footer">
             <a class="btn btn-secondary shadow fw-semibold bg-gradient py-2 mx-3 w-75"
-                href="/articles/{{ $article->id }} ">More details</a>
+                href="{{ route('article') }}">More details</a>
         </div>
     </div>
 </div>

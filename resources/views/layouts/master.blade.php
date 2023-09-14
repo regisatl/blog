@@ -9,14 +9,19 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo Black">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/79fa04224e.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <style>
-        * {
+        body {
             font-family: Poppins;
+        }
+
+        h1 {
+            font-family: 'Archivo Black';
         }
     </style>
 </head>
@@ -26,6 +31,7 @@
     @include('profile.partials.navbar.master-navbar')
 
     <div class="mt-5">
+        @include('profile.partials.messages.success')
         <h1 class="font-semibold text-dark text-center">Laravel 10</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit rem accusantium ab placeat earum
             quasi,
@@ -36,7 +42,6 @@
             laboriosam tempora dolore distinctio quaerat dolorum molestias possimus est, at suscipit ab recusandae
             eos!
         </p>
-        @include('profile.partials.messages.success')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
