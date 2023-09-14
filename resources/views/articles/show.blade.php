@@ -28,96 +28,13 @@
 
 <body class="container mt-3">
 
-    <ul class="nav nav-tabs nav-justified mt-3 fw-bold">
-        @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}"><span class="fas fa-sign"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}"><span class="fas fa-sign-in"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-        @endguest
-
-        @auth
-            <li class="nav-item">
-                <a class="nav-link active" href="/" title="home"><span class="fas fa-home"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about-us" title="About-us"><span class="fab fa-accessible-icon"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/articles" title="Articles"><span class="fas fa-blog"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/articles/create" title="Create article"><span class="fas fa-plus-square"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact-us" title="Contact"><span class="fas fa-mail-bulk"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('profile') }}"><span class="fas fa-user"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}"><span class="fas fa-sign-out-alt"
-                        style="font-size: 1.5rem"></span></a>
-            </li>
-        @endauth
-
-    </ul>
+    @include('profile.partials.navbar.show-navbar')
 
     <div class="mt-5">
 
-        <article class="mt-3 mb-5">
-            <h2 class="text-dark text-center mb-3 fw-semibold">Article !</h2>
-            <div class="card mb-3 shadow">
-                <div class="card-body">
-                    <h4 class="card-header text-center fw-semibold bg-primary bg-gradient text-light fs-5">
-                        {{ $article->user->name }}</h4>
-                    <p class="card-text mt-1 fw-semibold">{{ $article->title }}</p>
-                    <p class="card-text mt-1">{{ $article->body }}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/articles/{{ $article->id }}/edit" class="btn btn-primary py-2 shadow-lg bg-gradient">Edit
-                        article</a>
-                    <a href="/articles/{{ $article->id }}/delete"
-                        class="btn btn-danger py-2 shadow-lg bg-gradient">Delete article</a>
-                </div>
-            </div>
-        </article>
+        @include('profile.partials.article')
 
-        <article class="mt-3">
-            <h2 class="text-center text-dark mb-3 fw-semibold">Comments !</h2>
-            <div class="text-dark">
-                @foreach ($article->comments as $comment)
-                    <div class="card shadow mb-3">
-                        <div class="card-header">
-                            <p>
-                                <strong> {{ $comment->user->name }} </strong>
-                                a réagi :
-                            </p>
-                        </div>
-                        <div class="card-text px-3 pt-3">
-                            <p>
-                                {{ $comment->comment }}
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <p>
-                                <small><em> {{ $comment->created_at->diffForHumans() }} </em></small>
-                            </p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </article>
+        @include('profile.partials.comment')
 
     </div>
 

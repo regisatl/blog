@@ -38,20 +38,30 @@ class ArticlesController extends Controller
 
     public function create()
     {
+        $this->authorize('create', Article::class);
         return view('articles.create');
     }
 
     public function store(Request $request)
     {
+        $this->authorize('create', Article::class);
+        $user = User::find(11);
+        $request['user_id'] = $user->id;
+
+        $this->validate($request, [
+            'title' => 'required|string',
+            'body' => 'required|string',
+            'user_id' => 'required|numeric|exists:users,id',
+        ]);
 
         Article::create($request->all());
         return redirect('/aritcles')->with(['success_message' => 'L\'article a été crée avec succès ! ']);
-
 
     }
 
     public function edit(Article $article)
     {
+        $this->authorize('update', $article);
         return view('articles.edit', compact('article'));
     }
 
@@ -59,6 +69,7 @@ class ArticlesController extends Controller
     {
         // vérification des permissions plus tard
         // validation
+        $this->authorize('update', $article);
         $article->update($request->all());
 
     }
@@ -66,6 +77,7 @@ class ArticlesController extends Controller
     public function delete(Article $article)
     {
         // Vérification des permissions plus tard
+        $this->authorize('delete', $article);
         $article->delete();
 
     }

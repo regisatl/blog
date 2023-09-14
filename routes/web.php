@@ -18,8 +18,6 @@ use App\Http\Controllers\ArticlesController;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
-
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,15 +28,23 @@ Route::get('/', [PagesController::class, 'index']);
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::get('/about-us', [PagesController::class, 'about'])->middleware('guest');
-Route::get('/contact-us', [PagesController::class, 'contact'])->middleware('guest');
+Route::get('/', [PagesController::class, 'index'])->name('home');
+
+
+Route::get('/about-us', [PagesController::class, 'about'])->name('about')->middleware('guest');
+Route::get('/contact-us', [PagesController::class, 'contact'])->name('contact')->middleware('guest');
 
 //  Route for the article create, update, delete
-Route::get('/articles', [ArticlesController::class, 'articles']);
-Route::get('/articles/create', [ArticlesController::class, 'create'])->middleware('auth');
-Route::post('/articles/create', [ArticlesController::class, 'store'])->middleware('auth');
+Route::get('/articles', [ArticlesController::class, 'articles'])->name('articles');
+
+Route::get('/articles/create', [ArticlesController::class, 'create'])->middleware('admin');
+
+Route::post('/articles/create', [ArticlesController::class, 'store'])->middleware('admin');
+
 Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit'])->middleware('auth');
+
 Route::patch('/articles/{article}/edit', [ArticlesController::class, 'update'])->middleware('auth');
+
 Route::delete('article/{article}/delete', [ArticlesController::class, 'delete'])->middleware('auth');
 
 // Route for Auth, Register, Login
